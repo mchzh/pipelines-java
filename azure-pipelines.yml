@@ -42,3 +42,10 @@ steps:
     summaryFileLocation: "$(System.DefaultWorkingDirectory)/**/site/jacoco/jacoco.xml"
     reportDirectory: "$(System.DefaultWorkingDirectory)/**/site/jacoco"
     failIfCoverageEmpty: true
+
+- task: NodeTool@0
+  displayName: "Node install"
+  inputs:
+    versionSpec: '6.x' # The version we're installing
+# Write the installed version to the command line
+- script: which node
