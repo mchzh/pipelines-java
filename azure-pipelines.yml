@@ -11,11 +11,6 @@ pr:
 - main
 - release/*
 
-extends:
-  template: simple-param.yml
-  parameters:
-    yesNo: false
-
 strategy:
   matrix:
     jdk10_linux:
@@ -30,6 +25,9 @@ pool:
   vmImage: $(imageName)
 
 steps:
+- template: simple-param.yml
+  parameters:
+    yesNo: false
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
