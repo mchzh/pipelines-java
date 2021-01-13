@@ -11,6 +11,11 @@ pr:
 - main
 - release/*
 
+extends:
+  template: simple-param.yml
+  parameters:
+    yesNo: false
+
 strategy:
   matrix:
     jdk10_linux:
