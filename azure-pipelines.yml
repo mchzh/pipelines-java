@@ -11,6 +11,7 @@ pr:
 - main
 - release/*
 
+jobs:
 strategy:
   matrix:
     jdk10_linux:
@@ -21,7 +22,6 @@ strategy:
       jdk_version: "1.11"
   maxParallel: 2
 
-jobs:
 - job: Linux
   pool:
     vmImage: $(imageName)
